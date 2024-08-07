@@ -9,28 +9,26 @@
 </head>
 <style>
     body {
-        
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         background-color: black;
-        background:url("https://wallpapercave.com/wp/wp3197414.jpg") center center/cover ;
-        color:white;
+        background: url("https://wallpapercave.com/wp/wp3197414.jpg") center center/cover;
+        color: white;
         margin: 0;
     }
 
     .counter-container {
         background: black;
         padding: 20px;
-        border:1px solid rgb(59, 59, 59);
+        border: 1px solid rgb(59, 59, 59);
         border-radius: 10px;
         box-shadow: 5px 5px 8px rgba(200, 54, 54, 0.6);
         text-align: center;
-        width:50%;
-        height:40%;
-       
+        width: 50%;
+        height: 40%;
     }
 
     button {
@@ -63,11 +61,13 @@
         <button id="resetButton">Reset</button>
     </div>
 
-
-
     <script>
         let stepCount = 0;
         let isCounting = false;
+        let lastAcceleration = { x: 0, y: 0, z: 0 };
+        let lastStepTime = Date.now();
+        const stepThreshold = 15; // Adjust this value for sensitivity
+        const stepInterval = 300; // Minimum time (ms) between steps
 
         document.getElementById('startButton').addEventListener('click', () => {
             if (!isCounting) {
@@ -107,15 +107,24 @@
 
         function countSteps(event) {
             const acceleration = event.accelerationIncludingGravity;
+            const filteredAcceleration = {
+                x: acceleration.x * 0.1 + lastAcceleration.x * 0.9,
+                y: acceleration.y * 0.1 + lastAcceleration.y * 0.9,
+                z: acceleration.z * 0.1 + lastAcceleration.z * 0.9
+            };
+            lastAcceleration = filteredAcceleration;
+
             const totalAcceleration = Math.sqrt(
-                acceleration.x * acceleration.x +
-                acceleration.y * acceleration.y +
-                acceleration.z * acceleration.z
+                filteredAcceleration.x * filteredAcceleration.x +
+                filteredAcceleration.y * filteredAcceleration.y +
+                filteredAcceleration.z * filteredAcceleration.z
             );
 
-            if (totalAcceleration > 12) {
+            const currentTime = Date.now();
+            if (totalAcceleration > stepThreshold && (currentTime - lastStepTime) > stepInterval) {
                 stepCount++;
                 document.getElementById('stepCount').textContent = stepCount;
+                lastStepTime = currentTime;
             }
         }
 
@@ -127,7 +136,6 @@
             }
             document.getElementById('startButton').textContent = 'Start';
         }
-
     </script>
 </body>
 
