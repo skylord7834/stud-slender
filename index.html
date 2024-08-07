@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="./img/Black White Simple Monochrome Initial Name Logo.gif">
+    <title>Stud & Slender</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: rgb(67, 66, 66);
+            border-radius: 5px;
+        }
+
+   
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(44, 44, 44);
+            /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); */
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgb(56, 55, 55);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+       
+        .search-container {
+            display: flex;
+            align-items: center;
+            position: relative; 
+        }
+
+        #searchLogo {
+            width: 20px;
+            cursor: pointer;
+            margin-right: 10px; 
+        }
+
+        .search-btn {
+            background-color: orangered;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: rgb(252, 94, 37);
+        }
+
+        .search-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px; 
+            left: 0;
+            background-color: rgb(46, 46, 46);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .search-container:hover .search-dropdown-content {
+            display: block;
+        }
+
+        .search-dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .search-dropdown-content a:hover {
+            background-color: rgb(59, 59, 59);
+        }
+
+       
+        .login-btn {
+            background-color: rgb(123, 6, 6);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .login-btn:hover {
+            background-color: rgb(148, 32, 32);
+        }
+
+        .landing-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh; 
+            text-align: center;
+            color: white;
+            position: relative;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 44px;
+            font-weight:500;
+            max-width: 80%;
+            margin: auto;
+        }
+        .container{
+            background:url("https://www.bing.com/th/id/OGC.8f59dcf06cbbcba2ad195102b63ab681?pid=1.7&rurl=https%3a%2f%2fi.pinimg.com%2foriginals%2fad%2ff4%2f13%2fadf4132c2660e304837035f46c3b0839.gif&ehk=Mtm8myN%2b9I6oNI%2btMrjVOVjVt7unUVB%2fNtDmz7IQb%2f4%3d")
+        }
+
+        .typing {
+            border-right: .15em solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        .premiumBtn{
+            /* position:fixed; */
+            /* bottom:13px; */
+            /* left:15px; */
+            padding:9px;
+            margin:5px;
+            border-radius:5px;
+            /* color:black; */
+            /* background:linear-gradient(rgb(103, 103, 21), rgb(137, 137, 4)); */
+            background: linear-gradient(45deg, rgb(100, 85, 1), rgb(255, 218, 68), rgb(121, 81, 5));
+            text-decoration: none;
+            color:black;
+
+        }
+
+.slide-container {
+    width: 90%;
+
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:14px;
+}
+
+.section .text {
+    width: 50%;
+    padding: 20px;
+}
+
+.section h2 {
+    margin-top: 0;
+}
+
+.section button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:10px;
+    background-color:white;
+}
+ /* .lmbtn{
+    background-color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:10px;
+    background-color:white;
+ } */
+
+.left {
+    flex-direction: row;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.left img,
+.right img {
+    order: 1;
+}
+
+.left .text,
+.right .text {
+    order: 2;
+}
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="about.html"><img src="./img/Black White Simple Monochrome Initial Name Logo.gif" alt="Gym Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="exercise.html">Exercise</a></li>
+                <li><a href="guides.html">Guides</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Check Your Body</a>
+                    <div class="dropdown-content">
+                        <a href="bmi.html">BMI Calculator</a>
+                        <a href="stepcounter.html">Steps Counter</a>
+                        <a href="bloodPressure.html">Heart Blood Pressure</a>
+                        <a href="waterIntake.html">Water Intake Level</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <div class="search-container">
+                        <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-28.png" id="searchLogo" alt="Search">
+                        <a href="#" class="dropbtn">Search</a>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="#">How to get fat to fit</a>
+                        <a href="#">Skinny to bulk</a>
+                        <a href="#">Nearby Gyms</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="login-prem-btn">
+
+                <a href="#login" class="login-btn" >Login</a>
+                <a href="premium.html" class="premiumBtn">Premium</a>
+            </div>
+        </nav><hr color="grey">
+    </header>
+    <main>
+        <div class="container">
+            <div class="landing-text">
+                <div id="typed-text"></div>
+            </div>
+        </div>
+        <div class="slide-container">
+            <h1 style="text-align: center; margin: 40px 0; ">Explore Our Fitness and Wellness Programs</h1>
+
+            <div class="section left">
+                <img src="https://www.bing.com/th/id/OGC.a85a4675ec0c794eb19eee9d00e8509d?pid=1.7&rurl=https%3a%2f%2fwww.icegif.com%2fwp-content%2fuploads%2f2022%2f01%2ficegif-288.gif&ehk=BBoA0v4sfTbiCjcvAJG4H10B1qxF21Za2b1HkYV9nBk%3d" alt="Yoga and Meditation">
+                <div class="text">
+                    <h2>Yoga and Meditation</h2>
+                    <p>Explore the benefits of yoga and meditation for improving flexibility, reducing stress, and enhancing overall well-being.</p>
+                    <button>Learn More</button>
+                    <!-- <a href="yoga.html" class="lmbtn">Learn More</a> -->
+                </div>
+            </div>
+            <div class="section right">
+                <img src="https://www.bing.com/th/id/OGC.b22109311d38dff674e3799fb224707a?pid=1.7&rurl=https%3a%2f%2f66.media.tumblr.com%2f19a49fa58f085910145e86735ac74d9c%2ftumblr_nksj75yg6G1sr9vtpo1_500.gif&ehk=uTzBBapZeBafAOWW0P3sEBqbCTd8YropI1NYn2QrQ%2fQ%3d" alt="Workout">
+                <div class="text">
+                    <h2>Workout</h2>
+                    <p>Get inspired with effective workout routines to build strength, endurance, and achieve your fitness goals.</p>
+                    <button>Learn More</button>
+                    <!-- <a href="workout.html" class="lmbtn">Learn More</a> -->
+                </div>
+            </div>
+            <div class="section left">
+                <img src="https://www.bing.com/th/id/OGC.ef00c29cbefb9e90fa34ea4ddf2afb6b?pid=1.7&rurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2foO3nGIHCX0EGQlc4RX%2fgiphy.gif&ehk=3IvmBu4s5iEa5slZ%2bbrVqpfebqpx4juhB%2bpveFtv3uM%3d" alt="MMA and Boxing">
+                <div class="text">
+                    <h2>MMA and Boxing</h2>
+                    <p>Discover the intense world of MMA and boxing with training tips, techniques, and strategies for combat sports enthusiasts.</p>
+                    <button>Learn More</button>
+                    <!-- <a href="mma.html" class="lmbtn">Learn More</a> -->
+                </div>
+            </div>
+            <div class="section right">
+                <img src="https://www.bing.com/th/id/OGC.720a6622c7625d3bedbbeb1c212c42cb?pid=1.7&rurl=http%3a%2f%2fmedia.giphy.com%2fmedia%2fuwKE1Ab9Nww3m%2fgiphy.gif&ehk=TO7J9Ywn%2ff4nYDqD2Zf%2bvzA3ue45yfo5tDWYx6WZ%2fzc%3d" alt="Eat Healthy">
+                <div class="text">
+                    <h2>Eat Healthy</h2>
+                    <p>Learn about nutritious eating habits, meal planning, and recipes to maintain a balanced diet and promote a healthy lifestyle.</p>
+                    <button>Learn More</button>
+                    <!-- <a href="diet.html" class="lmbtn">Learn More</a> -->
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <script>
+        const text = "Welcome to Stud & Slender,  Your ultimate destination for fitness guides, exercise routines, and personalized health checks. Join us to transform your body and mind.";
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typed-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50);
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>

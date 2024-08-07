@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Counter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+    }
+
+    .counter-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #startButton {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    #resetButton {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <div class="counter-container">
+        <h1>Step Counter</h1>
+        <p>Steps: <span id="stepCount">0</span></p>
+        <button id="startButton">Start</button>
+        <button id="resetButton">Reset</button>
+    </div>
+
+
+
+    <script>
+        let stepCount = 0;
+        let isCounting = false;
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            if (!isCounting) {
+                startCounting();
+            } else {
+                stopCounting();
+            }
+        });
+
+        document.getElementById('resetButton').addEventListener('click', () => {
+            resetCounter();
+        });
+
+        function startCounting() {
+            if (typeof DeviceMotionEvent.requestPermission === 'function') {
+                DeviceMotionEvent.requestPermission()
+                    .then(permissionState => {
+                        if (permissionState === 'granted') {
+                            window.addEventListener('devicemotion', countSteps);
+                            isCounting = true;
+                            document.getElementById('startButton').textContent = 'Stop';
+                        }
+                    })
+                    .catch(console.error);
+            } else {
+                window.addEventListener('devicemotion', countSteps);
+                isCounting = true;
+                document.getElementById('startButton').textContent = 'Stop';
+            }
+        }
+
+        function stopCounting() {
+            window.removeEventListener('devicemotion', countSteps);
+            isCounting = false;
+            document.getElementById('startButton').textContent = 'Start';
+        }
+
+        function countSteps(event) {
+            const acceleration = event.accelerationIncludingGravity;
+            const totalAcceleration = Math.sqrt(
+                acceleration.x * acceleration.x +
+                acceleration.y * acceleration.y +
+                acceleration.z * acceleration.z
+            );
+
+            if (totalAcceleration > 12) {
+                stepCount++;
+                document.getElementById('stepCount').textContent = stepCount;
+            }
+        }
+
+        function resetCounter() {
+            stepCount = 0;
+            document.getElementById('stepCount').textContent = stepCount;
+            if (isCounting) {
+                stopCounting();
+            }
+            document.getElementById('startButton').textContent = 'Start';
+        }
+
+    </script>
+</body>
+
+</html>
