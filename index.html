@@ -165,7 +165,8 @@
         .container {
             height:90vh;
 
-            background: url("https://www.bing.com/th/id/OGC.8f59dcf06cbbcba2ad195102b63ab681?pid=1.7&rurl=https%3a%2f%2fi.pinimg.com%2foriginals%2fad%2ff4%2f13%2fadf4132c2660e304837035f46c3b0839.gif&ehk=Mtm8myN%2b9I6oNI%2btMrjVOVjVt7unUVB%2fNtDmz7IQb%2f4%3d")
+            /* background: url("https://www.bing.com/th/id/OGC.8f59dcf06cbbcba2ad195102b63ab681?pid=1.7&rurl=https%3a%2f%2fi.pinimg.com%2foriginals%2fad%2ff4%2f13%2fadf4132c2660e304837035f46c3b0839.gif&ehk=Mtm8myN%2b9I6oNI%2btMrjVOVjVt7unUVB%2fNtDmz7IQb%2f4%3d") */
+            background-image:url("./img/animated\ bg.gif");
         }
 
         .typing {
@@ -212,72 +213,218 @@
 
         }
 
-        .slide-container {
-            width: 90%;
 
+
+    .mainWelnessContainer>h1{
+        margin-top:50px;
+        margin-bottom:30px;
+    }
+    .wellnessContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .sectionItem {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(48, 48, 54);
+        text-align: center;
+        height:45vh;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .sectionItem-1 {
+        grid-column: span 1;
+        background-image: url("img/workoutbg.jpg");
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        transition:0.4s ease;
+        
+        overflow: hidden;
+
+    }
+
+    .sectionItem-1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+
+
+    .sectionItem-2 {
+        grid-column: span 1;
+        background-image: url("img/yogabg.jfif");
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        overflow: hidden;
+        transition:0.4s ease;
+
+    }
+
+    .sectionItem-2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .sectionItem h2,
+    .sectionItem p {
+        position: relative;
+        line-height: 30px;
+        z-index: 2;
+    }
+
+    .sectionItem-3 {
+        grid-column: span 2;
+        background-image: url("img/dietbg.jpg");
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        overflow: hidden;
+        transition:0.4s ease;
+
+
+    }
+
+    .sectionItem-3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+
+    .sectionItem-4 {
+        grid-column: span 1;
+        background-image: url("img/playlistbg.jpeg");
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        overflow: hidden;
+        transition:0.4s ease;
+
+
+    }
+
+    .sectionItem-4::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        
+        z-index: 1;
+    }
+
+    .sectionItem-5 {
+        grid-column: span 2;
+        background-image: url("img/mmabg.webp");
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        transition:0.4s ease;
+        
+        overflow: hidden;
+        /* font-size: 24px; */
+    }
+
+    .sectionItem-5::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        
+        z-index: 1;
+    }
+
+    .sectionItem-6 {
+        grid-column: span 2;
+        background-image: url("img/trainerbg.jpg");
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+     
+        overflow: hidden;
+        transition:0.4s ease;
+    }
+
+    .sectionItem-6::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        
+        z-index: 1;
+    }
+    .sectionItem:hover{
+        transform: scale(1.05);
+        color:rgb(196, 210, 255);
+    }
+
+    @media (max-width: 768px) {
+        .wellnessContainer {
+            grid-template-columns: 1fr;
         }
 
-        .section {
-            display: flex;
-            align-items: center;
-            height: 70vh;
-            padding: 20px;
-            box-sizing: border-box;
+        .sectionItem {
+            grid-column: span 1;
         }
+    }
 
-        .section img {
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 14px;
-        }
 
-        .section .text {
-            width: 50%;
-            padding: 20px;
-        }
 
-        .section h2 {
-            margin-top: 0;
-        }
 
-        .section button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 10px;
-            background-color: white;
-        }
 
-        /* .lmbtn{
-    background-color: white;
-    text-decoration: none;
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius:10px;
-    background-color:white;
- } */
 
-        .left {
-            flex-direction: row;
-        }
 
-        .right {
-            flex-direction: row-reverse;
-        }
 
-        .left img,
-        .right img {
-            order: 1;
-        }
-
-        .left .text,
-        .right .text {
-            order: 2;
-        }
+       
 
         @media (max-width:800px) {
             .navbar {
@@ -307,21 +454,7 @@
                 margin-top: 10px;
             }
 
-            .slide-container {
-                width: 100%;
-                padding: 0 10px;
-            }
 
-            .section {
-                flex-direction: column;
-            }
-
-            .section img,
-            .section .text {
-                width: 100%;
-                text-align: center;
-                order: initial;
-            }
             .container{
                 height:100vh;
             }
@@ -378,55 +511,62 @@
                 <div id="typed-text"></div>
             </div>
         </div>
-        <div class="slide-container">
-            <h1 style="text-align: center; margin: 40px 0; ">Explore Our Fitness and Wellness Programs</h1>
 
-            <div class="section left">
-                <img src="https://www.bing.com/th/id/OGC.a85a4675ec0c794eb19eee9d00e8509d?pid=1.7&rurl=https%3a%2f%2fwww.icegif.com%2fwp-content%2fuploads%2f2022%2f01%2ficegif-288.gif&ehk=BBoA0v4sfTbiCjcvAJG4H10B1qxF21Za2b1HkYV9nBk%3d"
-                    alt="Yoga and Meditation">
-                <div class="text">
-                    <h2>Yoga and Meditation</h2>
-                    <p>Explore the benefits of yoga and meditation for improving flexibility, reducing stress, and
-                        enhancing overall well-being.</p>
-                    <button>Learn More</button>
-                    <!-- <a href="yoga.html" class="lmbtn">Learn More</a> -->
+
+
+        <div class="mainWelnessContainer">
+            <h1 style="text-align: center;">Your Complete Journey...</h1>  
+        <div class="wellnessContainer">
+            <a href="workout.html">
+                <div class="sectionItem sectionItem-1">
+                    <h2>Custom Workouts </h2>
+                    <p>Your coach creates a routine that fits your travel plans, schedule, and goals so you never have to
+                        guess what to do next.</p>
                 </div>
-            </div>
-            <div class="section right">
-                <img src="https://www.bing.com/th/id/OGC.b22109311d38dff674e3799fb224707a?pid=1.7&rurl=https%3a%2f%2f66.media.tumblr.com%2f19a49fa58f085910145e86735ac74d9c%2ftumblr_nksj75yg6G1sr9vtpo1_500.gif&ehk=uTzBBapZeBafAOWW0P3sEBqbCTd8YropI1NYn2QrQ%2fQ%3d"
-                    alt="Workout">
-                <div class="text">
-                    <h2>Workout</h2>
-                    <p>Get inspired with effective workout routines to build strength, endurance, and achieve your
-                        fitness goals.</p>
-                    <button>Learn More</button>
-                    <!-- <a href="workout.html" class="lmbtn">Learn More</a> -->
+            </a>
+            <a href="yoga.html">
+                <div class="sectionItem sectionItem-2">
+                    <h2>Transform with Yoga!</h2>
+                    <p>Your coach checks in daily to keep you accountable, track your progress, celebrate your wins and help
+                        you push through when you need it.</p>
                 </div>
-            </div>
-            <div class="section left">
-                <img src="https://www.bing.com/th/id/OGC.ef00c29cbefb9e90fa34ea4ddf2afb6b?pid=1.7&rurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2foO3nGIHCX0EGQlc4RX%2fgiphy.gif&ehk=3IvmBu4s5iEa5slZ%2bbrVqpfebqpx4juhB%2bpveFtv3uM%3d"
-                    alt="MMA and Boxing">
-                <div class="text">
+            </a>
+            <a href="Diet.html">
+                <div class="sectionItem sectionItem-3">
+                    <h2>Get Your Diet Plans</h2>
+                    <p>Build healthier habits and get lasting results so you don't have to try another weight loss program
+                        ever again.</p>
+                </div>
+            </a>
+            <a href="playlist.html">
+                <div class="sectionItem sectionItem-4">
+                    <h2>Music for Mindfulness</h2>
+                    <p>Scientific approach to nutrition with thousands of meal options to satisfy your taste buds without
+                        compromising on your fitness goals.</p>
+                </div>
+            </a>
+            <a href="MMA.html">
+                <div class="sectionItem sectionItem-5">
                     <h2>MMA and Boxing</h2>
-                    <p>Discover the intense world of MMA and boxing with training tips, techniques, and strategies for
-                        combat sports enthusiasts.</p>
-                    <button>Learn More</button>
-                    <!-- <a href="mma.html" class="lmbtn">Learn More</a> -->
+                    <p>Your coach checks in daily to keep you accountable, track your progress, celebrate your wins and help
+                        you push through when you need it.</p>
+    
                 </div>
-            </div>
-            <div class="section right">
-                <img src="https://www.bing.com/th/id/OGC.720a6622c7625d3bedbbeb1c212c42cb?pid=1.7&rurl=http%3a%2f%2fmedia.giphy.com%2fmedia%2fuwKE1Ab9Nww3m%2fgiphy.gif&ehk=TO7J9Ywn%2ff4nYDqD2Zf%2bvzA3ue45yfo5tDWYx6WZ%2fzc%3d"
-                    alt="Eat Healthy">
-                <div class="text">
-                    <h2>Eat Healthy</h2>
-                    <p>Learn about nutritious eating habits, meal planning, and recipes to maintain a balanced diet and
-                        promote a healthy lifestyle.</p>
-                    <button>Learn More</button>
-                    <!-- <a href="diet.html" class="lmbtn">Learn More</a> -->
-
+            </a>
+            <a href="personaltrainer.html">
+                <div class="sectionItem sectionItem-6">
+                    <h2>Personalized Training</h2>
+                    <p>Get personalized advice and support from your coach to stay on track and achieve your goals.</p>
                 </div>
-            </div>
+            </a>
         </div>
+    </div>
+
+
+
+
+
+        
 
     </main>
 
