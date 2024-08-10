@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            background-image: url("./img/landingbg.jpeg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .premium-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .premium-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 20px;
+            /* height:70vh; */
+        }
+
+        .premium-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .premium-card h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #e0e0e0;
+        }
+
+        .premium-card .price {
+            font-size: 1.5rem;
+            color: gold;
+            margin: 10px 0;
+        }
+
+        .premium-card .old-price {
+            text-decoration: line-through;
+            color: white;
+        }
+
+        .premium-card .offer-details {
+            font-size: 0.9rem;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .buy-now-btn {
+
+            padding: 9px;
+            margin: 5px;
+            border-radius: 5px;
+            background: linear-gradient(45deg, rgb(100, 85, 1), rgb(255, 218, 68), rgb(121, 81, 5));
+            text-decoration: none;
+            color: black;
+            /* position:absolute;
+            left:20px;
+            bottom:20px; */
+            transition: background-color 0.2s ease;
+        }
+
+        .buy-now-btn:hover {
+            background: linear-gradient(45deg, rgb(232, 198, 5), rgb(255, 218, 68), rgb(82, 54, 3));
+            /* background-color: #ff2222; */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .premium-card {
+                max-width: 100%;
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .premium-card {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="premium-container">
+        <div class="premium-card">
+            <H1>ELITE</H1>
+            <h2>12 MONTHS</h2>
+            <div class="price"><span class="old-price">₹45550</span> ₹12990 (866/mo) + ₹2338 GST</div>
+            <div class="offer-details">
+                <p>+ Get FREE 3 months extension</p>
+                <P>+ Get access to personal trainer!</P>
+                <p>+ Get access to playlists, Listen to mindful musics</p>
+                <p>+ Get access to MMA & Boxing training!</p>
+            </div>
+            <button class="buy-now-btn">BUY NOW</button>
+        </div>
+
+        <div class="premium-card">
+            <H1>PRO</H1>
+
+            <h2>6 MONTHS</h2>
+            <div class="price"><span class="old-price">₹23550</span> ₹10656 (1332/mo) + ₹1918 GST</div>
+            <div class="offer-details">
+                <p>+ Get FREE 1 months extension</p>
+                <P>+ Get access to personal trainer!</P>
+                <p>+ Get access to playlists, Listen to mindful musics</p>
+                <p>+ Get smart workout plans.</p>
+               
+            </div>
+            <button class="buy-now-btn">BUY NOW</button>
+        </div>
+
+        <div class="premium-card">
+            <H1>BASIC</H1>
+
+            <h2>3 MONTHS</h2>
+            <div class="price"><span class="old-price">₹17550</span> ₹8114 (1803/mo) + ₹1460 GST</div>
+            <div class="offer-details">
+                <p>+ Get FREE 15 days extension!</p>
+                <p>+ Get access to personal trainer.</p>
+                <p>+ 1 more Offer</p>
+            </div>
+            <button class="buy-now-btn">BUY NOW</button>
+        </div>
+    </div>
+</body>
+
+</html>
