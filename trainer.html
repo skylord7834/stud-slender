@@ -123,14 +123,14 @@
         <div class="trainer-card">
             <img src="trainer4.jpg" alt="Trainer 4">
             <h3>Sarah Lee</h3>
-            <p>Yoga</p>
+            <p>Diet & nutrition</p>
             <p>Slots Available: 2</p>
             <p>People Coached: 10</p>
         </div>
         <div class="trainer-card">
             <img src="trainer5.jpg" alt="Trainer 5">
             <h3>David Kim</h3>
-            <p>Workout</p>
+            <p>MMA</p>
             <p>Slots Available: 6</p>
             <p>People Coached: 18</p>
         </div>
@@ -145,6 +145,8 @@
                 <option value="yoga">Yoga</option>
                 <option value="workout">Workout</option>
                 <option value="boxing">Boxing</option>
+                <option value="mma">MMA</option>
+                <option value="diet">Diet & nutrition</option>
             </select>
 
             <label for="trainerName">Select Trainer Name:</label>
@@ -156,10 +158,9 @@
             <select id="timeSlot">
                 <option value="">--Select Time Slot--</option>
                 <option value="6-8am">6:00 AM - 8:00 AM</option>
-                <option value="8-10am">8:00 AM - 10:00 AM</option>
-                <option value="10-12pm">10:00 AM - 12:00 PM</option>
-                <option value="12-2pm">12:00 PM - 2:00 PM</option>
-                <option value="2-4pm">2:00 PM - 4:00 PM</option>
+                <!-- <option value="8-10am">8:00 AM - 10:00 AM</option>
+                
+                <option value="2-4pm">2:00 PM - 4:00 PM</option> -->
                 <option value="4-6pm">4:00 PM - 6:00 PM</option>
             </select>
 
@@ -169,9 +170,11 @@
 
     <script>
         const trainerData = {
-            yoga: ["john Doe", "Sarah Lee"],
-            workout: ["Jane Smith", "David Kim"],
-            boxing: ["Mike Johnson"]
+            yoga: ["john Doe"],
+            workout: ["Jane Smith"],
+            boxing: ["Mike Johnson"],
+            mma:["David Kim"],
+            diet: ["Sarah Lee"]
         };
 
         const trainerTypeSelect = document.getElementById('trainerType');
